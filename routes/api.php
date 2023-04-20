@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\GrowthAnalystController;
+use App\Http\Controllers\OtpMailController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,3 +31,6 @@ Route::middleware('auth:api')->group(function () {
 
     Route::get('GrowthAnalyst', [GrowthAnalystController::class, 'index']);
 });
+
+Route::post('/OtpMail', [OtpMailController::class, 'OtpMail']);
+Route::post('/confirmOtp', [OtpMailController::class, 'confirmOtp']);
